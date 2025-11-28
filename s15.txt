@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portfolio</title>
+
+<style>
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #e6f0ff;
+    }
+    header {
+        background: linear-gradient(135deg, #6aa8ff, #8ecbff);
+        color: #003f8c;
+        padding: 40px;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* 🔵 Circle Photo */
+    .profile {
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        object-fit:cover;
+        border:3px solid #fff;
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav {
+        background: #cde8ff;
+        padding: 15px;
+        text-align: center;
+        border-radius: 15px;
+        margin: 20px auto;
+        max-width: 900px;
+    }
+    nav a {
+        color: #003f8c;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    nav a:hover {
+        color: #0077cc;
+    }
+    section {
+        margin: 30px auto;
+        max-width: 900px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(100,150,255,0.2);
+        transition: transform 0.3s;
+        background: #f0f8ff;
+    }
+    section:hover {
+        transform: translateY(-5px);
+    }
+    .section-id {
+        background: #6aa8ff;
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 15px;
+        text-align: left;
+    }
+    .section-content {
+        padding: 25px;
+        text-align: left;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 25px;
+        color: #003f8c;
+    }
+    form input, form textarea, form button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+        border: 1px solid #b3ccff;
+    }
+    form button {
+        background: #6aa8ff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    form button:hover {
+        background: #005bb5;
+    }
+    footer {
+        background: #6aa8ff;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Student | Developer | Learner</p>
+
+    <div style="text-align:center; margin-top:20px;">
+        <img src="C:\Users\Akash\Downloads\myphoto.jpg" class="profile" alt="My Photo">
+    </div>
+</header>
+
+<nav>
+    <a href="#profile">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="profile">
+    <div class="section-id">Student Profile</div>
+    <div class="section-content">
+        <p>I am a passionate Computer Science student interested in web development, problem-solving, and building impactful digital solutions. I aim to gain hands-on experience, improve my technical and communication skills, and contribute positively to the team.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="section-id">Skills</div>
+    <div class="section-content">
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>C, Python</li>
+            <li>Java</li>
+            <li>Git & GitHub</li>
+        </ul>
+    </div>
+</section>
+
+<section id="education">
+    <div class="section-id">Education</div>
+    <div class="section-content">
+        <ul>
+            <li>B.Tech in Computer Science (2023–2027)</li>
+            <li>Intermediate (MPC)</li>
+            <li>SSLC</li>
+        </ul>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-id">Projects</div>
+    <div class="section-content">
+        <ul>
+            <li>Portfolio Website</li>
+            <li>Basic IOT Lost and Found Tracker</li>
+            <li>Student Management System</li>
+        </ul>
+    </div>
+</section>
+
+<section id="achievements">
+    <div class="section-id">Achievements</div>
+    <div class="section-content">
+        <ul>
+            <li>Participated in college hackathon</li>
+            <li>Volunteered in college fest</li>
+        </ul>
+    </div>
+</section>
+
+<section id="certifications">
+    <div class="section-id">Certifications</div>
+    <div class="section-content">
+        <ul>
+            <li>Python Programming - Coursera</li>
+            <li>Web Development - Udemy</li>
+        </ul>
+        <a href="resume.pdf" download>Download Resume</a>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-id">Contact Form</div>
+    <div class="section-content">
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formStatus"></p>
+    </div>
+</section>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("formStatus").innerText = "Thank you! Your message has been submitted.";
+    });
+</script>
+
+</body>
+</html>
